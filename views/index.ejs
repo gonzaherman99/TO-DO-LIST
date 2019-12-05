@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fuck</title>
+         <link href="/style.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="box">
+        <div class="center">
+      
+        <h2><%= date %></h2>
+        <h3>Type in the line below and hit the + button</h3>
+        <% post.forEach(function(element) {%>
+        <form action="/delete" method="post">
+            
+        <div class="inline">
+            
+          <input type="checkbox" name="checkbox" value="<%= element._id %>" onChange="this.form.submit()">
+        
+          <h3><%= element.content %></h3>
+                
+          <% }) %>
+            </div>
+       
+        </form>
+          
+        <form method="post">
+            <input type="text" name="input">
+            <button class="submit" type="submit">+</button>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>
